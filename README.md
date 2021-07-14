@@ -21,8 +21,6 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 <a href="#author">Author</a>
 </p>
 
-
-
 ># [Description]
 >In this project, you will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server
 
@@ -49,10 +47,11 @@ $ git clone https://github.com/errea/Webpack-Todo_List.git
 $ cd Webpack-Todo_List
 ~~~
 
+Run `npm Install` to install the node modules and webpacker.
+
 Run `npm start` opens on `http://localhost:8080/` in your browser.
 
-
-
+Run `npm run build` to build the bundler.
 
 ## Set up
 * Open your terminal and locate the folder you want to clone the repository and follow the steps above to install
