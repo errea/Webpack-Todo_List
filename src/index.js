@@ -3,8 +3,13 @@ import './style.css';
 
 const list = [
   {
+    index: 3,
+    description: 'Solve Some Algorithm',
+    completed: false,
+  },
+  {
     index: 2,
-    description: 'Wash the dishes',
+    description: 'Attend Tech conference',
     completed: false,
   },
   {
