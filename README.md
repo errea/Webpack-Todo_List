@@ -33,7 +33,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 - DOM
 - [Webpack config](hhttps://webpack.js.org/guides/getting-started/)
 
-
+![screenshot](./src/img/screenshot-todo.png)
 ## Getting Started <a name = "gs"></a>
 > To get a local copy up and running follow these simple example steps.
 
