@@ -4,13 +4,13 @@ let dragging = null;
 let targing = null;
 
 export default class DragAndSort {
-  dragStart(event) {
+  dragStart = (event) => {
     const target = DragAndSort.getLI(event.target);
     dragging = target;
     event.dataTransfer.setDragImage(dragging, 0, 0);
   }
 
-  dragOver(event) {
+  dragOver = (event) => {
     event.preventDefault();
     const target = DragAndSort.getLI(event.target);
     dragging.style.display = 'none';
@@ -23,7 +23,7 @@ export default class DragAndSort {
     }
   }
 
-  drop(event) {
+  drop = (event) => {
     event.preventDefault();
     const target = DragAndSort.getLI(event.target);
     dragging.style.display = 'flex';
