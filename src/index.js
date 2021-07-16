@@ -1,29 +1,9 @@
 import './style.css';
 import DragAndSort from './drag.js';
 import Status from './status.js';
+import Crud from './crud.js';
 
-const list = [
-  {
-    index: 2,
-    description: 'Attend Tech conference',
-    completed: false,
-  },
-  {
-    index: 1,
-    description: 'Solve Some Algorithm',
-    completed: false,
-  },
-  {
-    index: 4,
-    description: 'Attend Tech conference',
-    completed: false,
-  },
-  {
-    index: 3,
-    description: 'Complete To Do list project',
-    completed: false,
-  },
-];
+const list = [];
 
 function loadLiEvents() {
   const liElements = document.querySelectorAll('.item');
@@ -32,6 +12,13 @@ function loadLiEvents() {
     liElements[i].addEventListener('dragstart', drag.dragStart);
     liElements[i].addEventListener('dragover', drag.dragOver);
     liElements[i].addEventListener('drop', drag.drop);
+  }
+  const itemDesc = document.querySelectorAll('.item-description');
+  for (let j = 0; j < liElements.length; j += 1) {
+    const crud = new Crud();
+    itemDesc[j].addEventListener('input', crud.updateTask); // Update Elements
+    itemDesc[j].addEventListener('focusin', crud.showTrashAndRemove); // Remove Elements
+    itemDesc[j].addEventListener('focusout', crud.showDots);
   }
 }
 
@@ -57,3 +44,11 @@ if (!localStorage.ToDoList) {
     DragAndSort.sortList(JSON.parse(localStorage.getItem('ToDoList'))),
   );
 }
+
+// ADD ELEMENTS
+const newItem = document.getElementById('add-to-list');
+const newCrud = new Crud();
+newItem.addEventListener('keypress', newCrud.addToList);
+// Remove All
+const btnClear = document.getElementById('clear');
+btnClear.addEventListener('click', newCrud.clearCompleted);
